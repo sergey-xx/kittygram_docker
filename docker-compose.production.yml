@@ -6,7 +6,6 @@ volumes:
   static_volume:
   media_volume:
 
-# Всё отличие — заменяем build на image и указываем, какой образ использовать
 services:
   db:
     image: postgres:13.10
@@ -20,14 +19,14 @@ services:
       - static_volume:/backend_static/
       - media_volume:/media/
   frontend:
-    image: sergeyxx/kittygram_frontend  # Качаем с Docker Hub
+    image: sergeyxx/kittygram_frontend
     env_file: .env
     build: ./frontend/
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static/
   gateway:
-    image: sergeyxx/kittygram_gateway  # Качаем с Docker Hub
+    image: sergeyxx/kittygram_gateway
     env_file: .env
     volumes:
       - static_volume:/staticfiles/
