@@ -8,7 +8,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') in ['TRUE', 'true', '1', 'yes']
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 '0.0.0.0',
+                 '158.160.81.84',
+                 'localhost',
+                 'kittygrm.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
