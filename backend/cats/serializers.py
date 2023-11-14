@@ -79,7 +79,7 @@ class CatSerializer(serializers.ModelSerializer):
                 achievement=current_achievement, cat=cat
             )
         return cat
-    
+
     def validate_birth_year(self, birth_year):
         if birth_year < 1980:
             raise serializers.ValidationError(
