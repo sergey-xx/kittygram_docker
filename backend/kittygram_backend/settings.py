@@ -10,9 +10,10 @@ DEBUG = os.getenv('DEBUG') in ['TRUE', 'true', '1', 'yes']
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  '0.0.0.0',
-                 '158.160.81.84',
                  'localhost',
-                 'kittygrm.ddns.net']
+                 os.getenv('SERVER_IP'),
+                 os.getenv('DOMAIN_NAME')
+                 ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
